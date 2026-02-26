@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backtest Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0a0a0a;--card:#141414;--border:#222;--text:#e5e5e5;--muted:#888;--green:#22c55e;--red:#ef4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.page{max-width:1100px;margin:0 auto;padding:24px 20px}
+h1{font-size:18px;font-weight:600;margin-bottom:4px}
+.sub{font-size:12px;color:var(--muted);margin-bottom:24px}
+.ctrl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:24px}
+.ctrl label{font-size:11px;color:var(--muted);margin-right:4px}
+.ctrl input[type=date]{background:var(--card);color:var(--text);border:1px solid var(--border);padding:6px 10px;border-radius:6px;font-size:12px;font-family:inherit}
+.ctrl input[type=date]:focus{outline:none;border-color:var(--green)}
+.sep{width:1px;height:28px;background:var(--border);margin:0 4px}
+.chip{padding:5px 14px;border-radius:100px;border:1.5px solid var(--border);background:transparent;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:inherit}
+.chip:hover{border-color:#444;color:var(--text)}
+.chip.on{color:#fff}
+.qchip{padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;cursor:pointer;font-family:inherit}
+.qchip:hover{color:var(--text)}
+.qchip.on{color:var(--green);border-color:var(--green)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.acard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
+.acard .nm{font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:6px}
+.acard .big{font-size:30px;font-weight:300}
+.acard .det{font-size:11px;color:var(--muted);margin-top:4px}
+.srow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.sbox{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.sbox .sv{font-size:24px;font-weight:700}
+.sbox .sl{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+.cbox{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px}
+.cbox h2{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:12px}
+.cbox .info{font-size:11px;color:var(--muted);margin-left:12px}
+.tbox{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.tbox h2{font-size:12px;color:var(--muted);font-weight:500;padding:16px 16px 8px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:8px 14px;font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
+td{padding:10px 14px;border-bottom:1px solid #1a1a1a}
+tr:hover td{background:#1a1a1a}
+.g{color:var(--green)}.r{color:var(--red)}
+.pill{display:inline-block;padding:2px 10px;border-radius:100px;font-size:10px;font-weight:600}
+.pg{background:#22c55e15;color:var(--green)}.pr{background:#ef444415;color:var(--red)}
+#loading{text-align:center;padding:80px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Backtest Results</h1>
+  <p class="sub">1-year out-of-sample &middot; $50 bets @ 0.51 limit price &middot; <span id="updated" style="color:#555">loading...</span></p>
+  <div id="loading">Loading trade data...</div>
+  <div id="app" style="display:none">
+    <div class="ctrl" id="ctrl"></div>
+    <div class="cards" id="cards"></div>
+    <div class="srow" id="srow"></div>
+    <div class="cbox"><h2>Equity Curve <span id="tc" class="info"></span></h2><canvas id="c1" height="140"></canvas></div>
+    <div class="cbox"><h2>Daily PnL</h2><canvas id="c2" height="80"></canvas></div>
+    <div class="tbox"><h2>Daily Breakdown</h2>
+      <table><thead><tr><th>Date</th><th>Trades</th><th>W / L</th><th>WR</th><th>PnL</th><th>Cum.</th><th></th></tr></thead>
+      <tbody id="tb"></tbody></table>
+    </div>
+  </div>
+</div>
+<script>
+const S=['BTCUSDT','ETHUSDT','XRPUSDT','SOLUSDT'];
+const N={BTCUSDT:'BTC',ETHUSDT:'ETH',XRPUSDT:'XRP',SOLUSDT:'SOL'};
+const CLR={BTCUSDT:'#f59e0b',ETHUSDT:'#3b82f6',XRPUSDT:'#a855f7',SOLUSDT:'#06b6d4'};
+let RAW={},sel=new Set(S),c1=null,c2=null,minD='',maxD='';
+
+fetch('/api/trades').then(r=>r.json()).then(d=>{
+  RAW=d;
+  let mn='9999',mx='0000';
+  S.forEach(s=>{(d[s]||[]).forEach(t=>{const dy=t.ts.slice(0,10);if(dy<mn)mn=dy;if(dy>mx)mx=dy;});});
+  minD=mn; maxD=mx;
+  document.getElementById('loading').style.display='none';
+  document.getElementById('app').style.display='block';
+  buildCtrl();
+  render();
+  // Show last updated
+  fetch('/api/last_updated').then(r=>r.json()).then(u=>{
+    document.getElementById('updated').textContent='last updated: '+u.ts;
+  });
+}).catch(e=>{document.getElementById('loading').textContent='Error: '+e;});
+
+function buildCtrl(){
+  let h='<label>From</label><input type="date" id="df" value="'+minD+'" min="'+minD+'" max="'+maxD+'" onchange="render()">';
+  h+='<label style="margin-left:8px">To</label><input type="date" id="dt" value="'+maxD+'" min="'+minD+'" max="'+maxD+'" onchange="render()">';
+  h+='<div class="sep"></div>';
+  [7,30,90,180,365].forEach(n=>{h+='<button class="qchip'+(n===365?' on':'')+'" onclick="setQ('+n+',this)">'+(n>=365?'1Y':n+'D')+'</button>';});
+  h+='<div class="sep"></div>';
+  S.forEach(s=>{h+='<button class="chip on" data-s="'+s+'" style="border-color:'+CLR[s]+'" onclick="tog(\''+s+'\',this)">'+N[s]+'</button>';});
+  document.getElementById('ctrl').innerHTML=h;
+}
+
+function setQ(n,el){
+  document.querySelectorAll('.qchip').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  const to=new Date(maxD+'T00:00:00Z');
+  const from=new Date(to.getTime()-(n-1)*864e5);
+  let fs=from.toISOString().slice(0,10);
+  if(fs<minD)fs=minD;
+  document.getElementById('df').value=fs;
+  document.getElementById('dt').value=maxD;
+  render();
+}
+
+function tog(s,el){
+  if(sel.has(s)&&sel.size>1){sel.delete(s);el.classList.remove('on');el.style.borderColor='#222';}
+  else if(!sel.has(s)){sel.add(s);el.classList.add('on');el.style.borderColor=CLR[s];}
+  render();
+}
+
+function filt(sym){
+  const f=document.getElementById('df').value,t=document.getElementById('dt').value;
+  return(RAW[sym]||[]).filter(tr=>{const d=tr.ts.slice(0,10);return d>=f&&d<=t;});
+}
+
+function ds(arr,max){
+  if(arr.length<=max)return arr;
+  const step=Math.ceil(arr.length/max),out=[];
+  for(let i=0;i<arr.length;i++){if(i%step===0||i===arr.length-1)out.push(arr[i]);}
+  return out;
+}
+
+function render(){
+  const filtered={};
+  S.forEach(s=>{filtered[s]=filt(s);});
+
+  // Asset cards
+  let ch='';
+  S.forEach(s=>{
+    const tr=filtered[s],w=tr.filter(x=>x.result==='WIN').length,l=tr.length-w;
+    const pnl=tr.reduce((a,x)=>a+x.pnl,0);
+    const wr=tr.length?(w/tr.length*100).toFixed(1):'--';
+    const ps=(pnl>=0?'+$':'-$')+Math.abs(pnl).toLocaleString(undefined,{maximumFractionDigits:0});
+    ch+='<div class="acard"><div class="nm" style="color:'+CLR[s]+'">'+N[s]+'</div>'
+      +'<div class="big '+(parseFloat(wr)>=50?'g':'r')+'">'+wr+'%</div>'
+      +'<div class="det">'+w+'W / '+l+'L &middot; '+ps+'</div></div>';
+  });
+  document.getElementById('cards').innerHTML=ch;
+
+  // Merged trades for selected
+  let all=[];
+  Array.from(sel).forEach(s=>{filtered[s].forEach(tr=>all.push({...tr,sym:s}));});
+  all.sort((a,b)=>a.ts.localeCompare(b.ts));
+
+  const tw=all.filter(x=>x.result==='WIN').length,tl=all.length-tw;
+  const tp=all.reduce((a,x)=>a+x.pnl,0);
+  const wr=all.length?(tw/all.length*100).toFixed(1):'0';
+
+  // Daily agg
+  const combo={};
+  all.forEach(tr=>{const d=tr.ts.slice(0,10);if(!combo[d])combo[d]={w:0,l:0,pnl:0};if(tr.result==='WIN')combo[d].w++;else combo[d].l++;combo[d].pnl+=tr.pnl;});
+  const cdays=Object.keys(combo).sort();
+  const gd=cdays.filter(d=>combo[d].pnl>0).length;
+  const avg=cdays.length?tp/cdays.length:0;
+
+  const sc=(v,l,c)=>'<div class="sbox"><div class="sv '+c+'">'+v+'</div><div class="sl">'+l+'</div></div>';
+  document.getElementById('srow').innerHTML=
+    sc(wr+'%','Win Rate',parseFloat(wr)>=50?'g':'r')
+    +sc((tp>=0?'+':'')+Math.round(tp),'Total PnL',tp>=0?'g':'r')
+    +sc(all.length.toLocaleString(),'Trades','')
+    +sc(gd+'/'+cdays.length,'Green Days','g')
+    +sc((avg>=0?'+':'')+Math.round(avg),'Avg/Day',avg>=0?'g':'r');
+
+  const perAssetCount=Math.max(...Array.from(sel).map(s=>filtered[s].length));
+  document.getElementById('tc').textContent='('+perAssetCount.toLocaleString()+' candles, '+sel.size+' assets)';
+
+  // EQUITY CHART — trade by trade
+  if(c1)c1.destroy();
+  const eqSets=[];
+
+  Array.from(sel).forEach(s=>{
+    const tr=filtered[s];
+    let eq=0;
+    const pts=tr.map(t=>{eq+=t.pnl;return Math.round(eq*100)/100;});
+    eqSets.push({label:N[s],data:ds(pts,2000),borderColor:CLR[s],borderWidth:1.5,pointRadius:0,tension:0.15});
+  });
+
+  if(sel.size>1){
+    // Combined = sum of per-asset equity at each trade index
+    const assetEqs=Array.from(sel).map(s=>{
+      const tr=filtered[s]; let eq=0;
+      return tr.map(t=>{eq+=t.pnl;return Math.round(eq*100)/100;});
+    });
+    const maxL=Math.max(...assetEqs.map(a=>a.length));
+    const combined=[];
+    for(let i=0;i<maxL;i++){
+      let sum=0;
+      assetEqs.forEach(a=>{if(i<a.length)sum+=a[i];else if(a.length)sum+=a[a.length-1];});
+      combined.push(Math.round(sum*100)/100);
+    }
+    eqSets.unshift({label:'Combined',data:ds(combined,2000),borderColor:'#22c55e',borderWidth:2.5,pointRadius:0,tension:0.15,borderDash:[6,3]});
+  }
+
+  const maxLen=Math.max(...eqSets.map(d=>d.data.length));
+  const labels=Array.from({length:maxLen},()=>'');
+
+  c1=new Chart(document.getElementById('c1'),{
+    type:'line',
+    data:{labels,datasets:eqSets},
+    options:{
+      responsive:true,animation:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{
+        legend:{labels:{color:'#888',font:{size:11},usePointStyle:true,pointStyle:'circle'}},
+        tooltip:{backgroundColor:'#1a1a1a',titleColor:'#e5e5e5',bodyColor:'#aaa',borderColor:'#333',borderWidth:1,
+          callbacks:{title:ctx=>'Trade #'+((ctx[0]?.dataIndex||0)+1),label:ctx=>' '+ctx.dataset.label+': $'+ctx.parsed.y.toLocaleString()}}
+      },
+      scales:{
+        x:{display:false},
+        y:{ticks:{color:'#555',font:{size:10},callback:v=>'$'+v.toLocaleString()},grid:{color:'#1a1a1a'}}
+      }
+    }
+  });
+
+  // BAR CHART
+  if(c2)c2.destroy();
+  const barD=cdays.map(d=>Math.round(combo[d].pnl*100)/100);
+  c2=new Chart(document.getElementById('c2'),{
+    type:'bar',
+    data:{labels:cdays,datasets:[{data:barD,backgroundColor:barD.map(v=>v>=0?'#22c55e40':'#ef444440'),borderColor:barD.map(v=>v>=0?'#22c55e':'#ef4444'),borderWidth:1,borderRadius:4}]},
+    options:{
+      responsive:true,animation:false,
+      plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a1a',bodyColor:'#aaa',borderColor:'#333',borderWidth:1,callbacks:{label:ctx=>'$'+ctx.parsed.y.toLocaleString()}}},
+      scales:{x:{ticks:{color:'#555',font:{size:9},maxRotation:45},grid:{display:false}},y:{ticks:{color:'#555',font:{size:10},callback:v=>'$'+v},grid:{color:'#1a1a1a'}}}
+    }
+  });
+
+  // TABLE
+  let tb='',cum=0;
+  cdays.forEach(d=>{
+    const dd=combo[d],tot=dd.w+dd.l,dwr=(dd.w/tot*100).toFixed(1);
+    cum+=dd.pnl;
+    const pc=dd.pnl>=0?'g':'r',cc=cum>=0?'g':'r';
+    const pill=dd.pnl>=0?'<span class="pill pg">GREEN</span>':'<span class="pill pr">RED</span>';
+    tb+='<tr><td style="font-weight:500">'+d+'</td><td>'+tot+'</td><td>'+dd.w+' / '+dd.l+'</td>'
+      +'<td class="'+(parseFloat(dwr)>=50?'g':'r')+'">'+dwr+'%</td>'
+      +'<td class="'+pc+'" style="font-weight:600">'+(dd.pnl>=0?'+':'')+dd.pnl.toFixed(2)+'</td>'
+      +'<td class="'+cc+'">'+(cum>=0?'+':'')+cum.toFixed(2)+'</td>'
+      +'<td>'+pill+'</td></tr>';
+  });
+  document.getElementById('tb').innerHTML=tb;
+}
+</script>
+</body></html>

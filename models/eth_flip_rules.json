@@ -1,0 +1,3279 @@
+{
+  "version": "v5b",
+  "created_at": "2026-02-25T01:15:32.919326+00:00",
+  "feature_names": [
+    "alignment_count",
+    "bias_direction",
+    "c1_count_m1",
+    "c1_count_m5",
+    "consec_c3_m1",
+    "consec_c3_m5",
+    "day_of_week",
+    "f5a_aligned",
+    "f5b_aligned",
+    "f5c_aligned",
+    "f5d_aligned",
+    "f5e_aligned",
+    "f5f_aligned",
+    "h1_body_vs_atr",
+    "h1_c123",
+    "h1_direction",
+    "h1_fvg_bear",
+    "h1_fvg_bull",
+    "h1_range_vs_atr",
+    "h4_c123",
+    "h4_direction",
+    "hour_cos",
+    "hour_sin",
+    "m15_body_vs_atr",
+    "m15_c123",
+    "m15_direction",
+    "m15_fvg_bear",
+    "m15_fvg_bull",
+    "m15_range_vs_atr",
+    "m1_body_vs_atr",
+    "m1_c123",
+    "m1_direction",
+    "m1_fvg_bear",
+    "m1_fvg_bull",
+    "m1_last_displacement",
+    "m1_range_vs_atr",
+    "m30_c123",
+    "m30_direction",
+    "m3_c123",
+    "m3_direction",
+    "m3_fvg_bear",
+    "m3_fvg_bull",
+    "m5_body_vs_atr",
+    "m5_c123",
+    "m5_direction",
+    "m5_fvg_bear",
+    "m5_fvg_bull",
+    "m5_range_vs_atr",
+    "m5_swept_high",
+    "m5_swept_low",
+    "m5_unfilled_fvg_dist",
+    "weighted_vote",
+    "conf_abs",
+    "conf_edge",
+    "R_h1_body_vs_atr/m15_body_vs_atr",
+    "R_h1_body_vs_atr/m1_body_vs_atr",
+    "R_h1_body_vs_atr/m5_body_vs_atr",
+    "R_m15_body_vs_atr/m1_body_vs_atr",
+    "R_m15_body_vs_atr/m5_body_vs_atr",
+    "R_m1_body_vs_atr/m5_body_vs_atr",
+    "R_h1_range_vs_atr/m15_range_vs_atr",
+    "R_h1_range_vs_atr/m1_range_vs_atr",
+    "R_h1_range_vs_atr/m5_range_vs_atr",
+    "R_m15_range_vs_atr/m1_range_vs_atr",
+    "R_m15_range_vs_atr/m5_range_vs_atr",
+    "R_m1_range_vs_atr/m5_range_vs_atr",
+    "AGR_bias_direction*h1_direction",
+    "AGR_bias_direction*h4_direction",
+    "AGR_bias_direction*m15_direction",
+    "AGR_bias_direction*m1_direction",
+    "AGR_bias_direction*m30_direction",
+    "AGR_bias_direction*m3_direction",
+    "AGR_bias_direction*m5_direction",
+    "AGR_h1_direction*h4_direction",
+    "AGR_h1_direction*m15_direction",
+    "AGR_h1_direction*m1_direction",
+    "AGR_h1_direction*m30_direction",
+    "AGR_h1_direction*m3_direction",
+    "AGR_h1_direction*m5_direction",
+    "AGR_h4_direction*m15_direction",
+    "AGR_h4_direction*m1_direction",
+    "AGR_h4_direction*m30_direction",
+    "AGR_h4_direction*m3_direction",
+    "AGR_h4_direction*m5_direction",
+    "AGR_m15_direction*m1_direction",
+    "AGR_m15_direction*m30_direction",
+    "AGR_m15_direction*m3_direction",
+    "AGR_m15_direction*m5_direction",
+    "AGR_m1_direction*m30_direction",
+    "AGR_m1_direction*m3_direction",
+    "AGR_m1_direction*m5_direction",
+    "AGR_m30_direction*m3_direction",
+    "AGR_m30_direction*m5_direction",
+    "AGR_m3_direction*m5_direction",
+    "D_h1_range_vs_atr-m15_range_vs_atr",
+    "D_h1_range_vs_atr-m1_range_vs_atr",
+    "D_h1_range_vs_atr-m5_range_vs_atr",
+    "D_m15_range_vs_atr-m1_range_vs_atr",
+    "D_m15_range_vs_atr-m5_range_vs_atr",
+    "D_m1_range_vs_atr-m5_range_vs_atr",
+    "P_m1_last_displacement*h1_range_vs_atr",
+    "P_m1_last_displacement*m15_range_vs_atr",
+    "P_m1_last_displacement*m1_range_vs_atr",
+    "P_m1_last_displacement*m5_range_vs_atr",
+    "ASYM_m5_swept_high+m5_swept_low",
+    "CxF_weighted_vote",
+    "CxF_alignment_count",
+    "CxF_m5_range_vs_atr",
+    "CxF_m1_range_vs_atr",
+    "CxF_m5_body_vs_atr",
+    "CxF_consec_c3_m5",
+    "CxF_consec_c3_m1",
+    "CxF_m5_unfilled_fvg_dist",
+    "CxF_m1_body_vs_atr",
+    "CxF_c1_count_m5",
+    "CxF_c1_count_m1",
+    "C123M_h1_c123=h4_c123",
+    "C123M_h1_c123=m15_c123",
+    "C123M_h1_c123=m1_c123",
+    "C123M_h1_c123=m30_c123",
+    "C123M_h1_c123=m3_c123",
+    "C123M_h1_c123=m5_c123",
+    "C123M_h4_c123=m15_c123",
+    "C123M_h4_c123=m1_c123",
+    "C123M_h4_c123=m30_c123",
+    "C123M_h4_c123=m3_c123",
+    "C123M_h4_c123=m5_c123",
+    "C123M_m15_c123=m1_c123",
+    "C123M_m15_c123=m30_c123",
+    "C123M_m15_c123=m3_c123",
+    "C123M_m15_c123=m5_c123",
+    "C123M_m1_c123=m30_c123",
+    "C123M_m1_c123=m3_c123",
+    "C123M_m1_c123=m5_c123",
+    "C123M_m30_c123=m3_c123",
+    "C123M_m30_c123=m5_c123",
+    "C123M_m3_c123=m5_c123"
+  ],
+  "segments": {
+    "ALL": {
+      "conditions": {},
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.002256999956443906
+            ],
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.057829998433589935
+            ]
+          ],
+          "loss_rate": 0.5169000029563904,
+          "n_trades": 3692
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.002256999956443906
+            ],
+            [
+              "CxF_c1_count_m1",
+              "<=",
+              0.03766399994492531
+            ]
+          ],
+          "loss_rate": 0.5160999894142151,
+          "n_trades": 3447
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.002256999956443906
+            ],
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.013580000028014183
+            ]
+          ],
+          "loss_rate": 0.5160999894142151,
+          "n_trades": 3081
+        },
+        {
+          "conditions": [
+            [
+              "conf_abs",
+              "<=",
+              0.5149019956588745
+            ],
+            [
+              "C123M_m15_c123=m3_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5196999907493591,
+          "n_trades": 2425
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_range_vs_atr",
+              "<=",
+              0.004705000203102827
+            ],
+            [
+              "CxF_m1_body_vs_atr",
+              "<=",
+              0.002498999936506152
+            ]
+          ],
+          "loss_rate": 0.5184000134468079,
+          "n_trades": 1790
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.0027979998849332333
+            ],
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.06172100082039833
+            ]
+          ],
+          "loss_rate": 0.5223000049591064,
+          "n_trades": 1775
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.005412000231444836
+            ],
+            [
+              "D_h1_range_vs_atr-m1_range_vs_atr",
+              "<=",
+              0.19846999645233154
+            ]
+          ],
+          "loss_rate": 0.5231000185012817,
+          "n_trades": 1423
+        }
+      ]
+    },
+    "LC_TR": {
+      "conditions": {
+        "conf_abs_lt": 0.52,
+        "_or_trending": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "h4_c123",
+              "<=",
+              2.0
+            ]
+          ],
+          "loss_rate": 0.5309000015258789,
+          "n_trades": 1897
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.006087000016123056
+            ],
+            [
+              "CxF_consec_c3_m1",
+              "<=",
+              0.0026579999830573797
+            ]
+          ],
+          "loss_rate": 0.5638999938964844,
+          "n_trades": 886
+        }
+      ]
+    },
+    "C50": {
+      "conditions": {
+        "conf_abs_gte": 0.5,
+        "conf_abs_lt": 0.51
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "AGR_m15_direction*m30_direction",
+              ">",
+              -0.0
+            ]
+          ],
+          "loss_rate": 0.5275999903678894,
+          "n_trades": 1825
+        }
+      ]
+    },
+    "Dc50": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.5,
+        "conf_abs_lt": 0.52
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.006359000224620104
+            ]
+          ],
+          "loss_rate": 0.5209000110626221,
+          "n_trades": 1649
+        },
+        {
+          "conditions": [
+            [
+              "R_m1_range_vs_atr/m5_range_vs_atr",
+              "<=",
+              0.5476030111312866
+            ]
+          ],
+          "loss_rate": 0.5486000180244446,
+          "n_trades": 674
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_high",
+              "<=",
+              -1.7418309450149536
+            ],
+            [
+              "AGR_h1_direction*m1_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5608999729156494,
+          "n_trades": 602
+        }
+      ]
+    },
+    "D": {
+      "conditions": {
+        "ml_pred": 0
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m1_body_vs_atr",
+              "<=",
+              0.0024530000519007444
+            ],
+            [
+              "CxF_c1_count_m1",
+              "<=",
+              0.03238299861550331
+            ]
+          ],
+          "loss_rate": 0.5267000198364258,
+          "n_trades": 1531
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_body_vs_atr",
+              "<=",
+              0.0024530000519007444
+            ],
+            [
+              "m3_fvg_bull",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5281000137329102,
+          "n_trades": 1287
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.0028389999642968178
+            ],
+            [
+              "CxF_weighted_vote",
+              "<=",
+              0.010641999542713165
+            ]
+          ],
+          "loss_rate": 0.5310999751091003,
+          "n_trades": 991
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_high",
+              "<=",
+              -1.6587899923324585
+            ],
+            [
+              "conf_abs",
+              "<=",
+              0.5113570094108582
+            ]
+          ],
+          "loss_rate": 0.5561000108718872,
+          "n_trades": 643
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.0022789998911321163
+            ],
+            [
+              "D_m15_range_vs_atr-m5_range_vs_atr",
+              ">",
+              0.6485790014266968
+            ]
+          ],
+          "loss_rate": 0.589900016784668,
+          "n_trades": 374
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_high",
+              "<=",
+              -1.7581169605255127
+            ],
+            [
+              "CxF_m1_body_vs_atr",
+              "<=",
+              0.0024530000519007444
+            ]
+          ],
+          "loss_rate": 0.5472000241279602,
+          "n_trades": 629
+        }
+      ]
+    },
+    "LC_US": {
+      "conditions": {
+        "conf_abs_lt": 0.52,
+        "hour_gte": 16,
+        "hour_lt": 24
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.016101999208331108
+            ]
+          ],
+          "loss_rate": 0.5228999853134155,
+          "n_trades": 1483
+        },
+        {
+          "conditions": [
+            [
+              "h1_body_vs_atr",
+              "<=",
+              0.47392699122428894
+            ]
+          ],
+          "loss_rate": 0.5250999927520752,
+          "n_trades": 1450
+        },
+        {
+          "conditions": [
+            [
+              "C123M_h4_c123=m3_c123",
+              "<=",
+              0.0
+            ],
+            [
+              "alignment_count",
+              "<=",
+              1.0
+            ]
+          ],
+          "loss_rate": 0.5550000071525574,
+          "n_trades": 654
+        }
+      ]
+    },
+    "D_HV": {
+      "conditions": {
+        "ml_pred": 0,
+        "m5_range_vs_atr_gte": 1.2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.034658998250961304
+            ],
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.04858100041747093
+            ]
+          ],
+          "loss_rate": 0.5196999907493591,
+          "n_trades": 1524
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.04858100041747093
+            ],
+            [
+              "C123M_h1_c123=m1_c123",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5163999795913696,
+          "n_trades": 1258
+        },
+        {
+          "conditions": [
+            [
+              "m1_fvg_bull",
+              "<=",
+              0.0
+            ],
+            [
+              "m3_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5224999785423279,
+          "n_trades": 809
+        },
+        {
+          "conditions": [
+            [
+              "m1_fvg_bear",
+              ">",
+              0.0
+            ],
+            [
+              "P_m1_last_displacement*h1_range_vs_atr",
+              ">",
+              1.4734959602355957
+            ]
+          ],
+          "loss_rate": 0.5533000230789185,
+          "n_trades": 347
+        },
+        {
+          "conditions": [
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.034658998250961304
+            ],
+            [
+              "m3_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5288000106811523,
+          "n_trades": 900
+        }
+      ]
+    },
+    "U_HV": {
+      "conditions": {
+        "ml_pred": 1,
+        "m5_range_vs_atr_gte": 1.2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_h1_range_vs_atr/m15_range_vs_atr",
+              "<=",
+              0.8695080280303955
+            ],
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.07739900052547455
+            ]
+          ],
+          "loss_rate": 0.5223000049591064,
+          "n_trades": 1209
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.07193999737501144
+            ],
+            [
+              "m15_c123",
+              ">",
+              2.0
+            ]
+          ],
+          "loss_rate": 0.5163000226020813,
+          "n_trades": 1033
+        },
+        {
+          "conditions": [
+            [
+              "R_h1_body_vs_atr/m5_body_vs_atr",
+              "<=",
+              0.07478500157594681
+            ],
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              "<=",
+              -0.9156829714775085
+            ]
+          ],
+          "loss_rate": 0.5691999793052673,
+          "n_trades": 209
+        }
+      ]
+    },
+    "U": {
+      "conditions": {
+        "ml_pred": 1
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.0012919999426230788
+            ],
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.019214000552892685
+            ]
+          ],
+          "loss_rate": 0.5260000228881836,
+          "n_trades": 1204
+        }
+      ]
+    },
+    "US": {
+      "conditions": {
+        "hour_gte": 16,
+        "hour_lt": 24
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.0012110000243410468
+            ]
+          ],
+          "loss_rate": 0.5382000207901001,
+          "n_trades": 976
+        },
+        {
+          "conditions": [
+            [
+              "R_h1_range_vs_atr/m1_range_vs_atr",
+              "<=",
+              0.9381639957427979
+            ],
+            [
+              "AGR_m1_direction*m5_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5343999862670898,
+          "n_trades": 846
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.3960770070552826
+            ],
+            [
+              "AGR_m1_direction*m5_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5759999752044678,
+          "n_trades": 466
+        }
+      ]
+    },
+    "Uc52": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.54
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "AGR_m15_direction*m1_direction",
+              "<=",
+              -1.0
+            ],
+            [
+              "AGR_h1_direction*m3_direction",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5400999784469604,
+          "n_trades": 847
+        },
+        {
+          "conditions": [
+            [
+              "AGR_m15_direction*m1_direction",
+              "<=",
+              -1.0
+            ],
+            [
+              "AGR_h1_direction*m15_direction",
+              "<=",
+              -0.0
+            ]
+          ],
+          "loss_rate": 0.5260999798774719,
+          "n_trades": 779
+        },
+        {
+          "conditions": [
+            [
+              "CxF_consec_c3_m1",
+              ">",
+              0.02176699973642826
+            ],
+            [
+              "AGR_h1_direction*m3_direction",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.531499981880188,
+          "n_trades": 728
+        },
+        {
+          "conditions": [
+            [
+              "conf_abs",
+              ">",
+              0.5339030027389526
+            ],
+            [
+              "R_m1_body_vs_atr/m5_body_vs_atr",
+              ">",
+              0.9057170152664185
+            ]
+          ],
+          "loss_rate": 0.5580999851226807,
+          "n_trades": 483
+        },
+        {
+          "conditions": [
+            [
+              "m15_body_vs_atr",
+              "<=",
+              0.10307099670171738
+            ],
+            [
+              "AGR_m1_direction*m30_direction",
+              ">",
+              -0.0
+            ]
+          ],
+          "loss_rate": 0.6122000217437744,
+          "n_trades": 172
+        },
+        {
+          "conditions": [
+            [
+              "m1_body_vs_atr",
+              ">",
+              1.3486380577087402
+            ],
+            [
+              "AGR_h1_direction*m3_direction",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.6000000238418579,
+          "n_trades": 213
+        },
+        {
+          "conditions": [
+            [
+              "m15_body_vs_atr",
+              ">",
+              0.954397976398468
+            ],
+            [
+              "AGR_bias_direction*m5_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.6000000238418579,
+          "n_trades": 192
+        }
+      ]
+    },
+    "D_RV": {
+      "conditions": {
+        "ml_pred": 0
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m1_body_vs_atr",
+              "<=",
+              0.002428000094369054
+            ],
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.08795899897813797
+            ]
+          ],
+          "loss_rate": 0.5242999792098999,
+          "n_trades": 821
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_body_vs_atr",
+              "<=",
+              0.002428000094369054
+            ],
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.014140999875962734
+            ]
+          ],
+          "loss_rate": 0.5288000106811523,
+          "n_trades": 746
+        },
+        {
+          "conditions": [
+            [
+              "m3_fvg_bear",
+              ">",
+              0.0
+            ],
+            [
+              "m1_range_vs_atr",
+              "<=",
+              0.5106729865074158
+            ]
+          ],
+          "loss_rate": 0.5418000221252441,
+          "n_trades": 364
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_low",
+              ">",
+              -0.21716700494289398
+            ],
+            [
+              "m1_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5609999895095825,
+          "n_trades": 350
+        },
+        {
+          "conditions": [
+            [
+              "D_m15_range_vs_atr-m1_range_vs_atr",
+              ">",
+              0.8969190120697021
+            ],
+            [
+              "m5_body_vs_atr",
+              "<=",
+              0.18737700581550598
+            ]
+          ],
+          "loss_rate": 0.6061000227928162,
+          "n_trades": 150
+        }
+      ]
+    },
+    "U_C2": {
+      "conditions": {
+        "ml_pred": 1,
+        "m5_c123_eq": 2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              ">",
+              -1.1677809953689575
+            ],
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.07335499674081802
+            ]
+          ],
+          "loss_rate": 0.5241000056266785,
+          "n_trades": 805
+        }
+      ]
+    },
+    "LC_LV": {
+      "conditions": {
+        "conf_abs_lt": 0.52,
+        "m5_range_vs_atr_lt": 0.6
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.01696999929845333
+            ]
+          ],
+          "loss_rate": 0.5568000078201294,
+          "n_trades": 822
+        }
+      ]
+    },
+    "D_TR": {
+      "conditions": {
+        "ml_pred": 0,
+        "_or_trending": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.013767999596893787
+            ],
+            [
+              "CxF_weighted_vote",
+              "<=",
+              0.004892999771982431
+            ]
+          ],
+          "loss_rate": 0.5216000080108643,
+          "n_trades": 816
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_high",
+              "<=",
+              -1.7074719667434692
+            ],
+            [
+              "R_h1_range_vs_atr/m1_range_vs_atr",
+              "<=",
+              0.6742249727249146
+            ]
+          ],
+          "loss_rate": 0.5548999905586243,
+          "n_trades": 247
+        },
+        {
+          "conditions": [
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              "<=",
+              -3.839401960372925
+            ],
+            [
+              "R_h1_range_vs_atr/m1_range_vs_atr",
+              "<=",
+              0.6742249727249146
+            ]
+          ],
+          "loss_rate": 0.6575000286102295,
+          "n_trades": 124
+        }
+      ]
+    },
+    "LC_HV": {
+      "conditions": {
+        "conf_abs_lt": 0.52,
+        "m5_range_vs_atr_gte": 1.2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "D_m1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.609857976436615
+            ]
+          ],
+          "loss_rate": 0.5281000137329102,
+          "n_trades": 862
+        }
+      ]
+    },
+    "C53": {
+      "conditions": {
+        "conf_abs_gte": 0.53,
+        "conf_abs_lt": 0.54
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m1_range_vs_atr",
+              ">",
+              0.8020039796829224
+            ],
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.03851199895143509
+            ]
+          ],
+          "loss_rate": 0.5335999727249146,
+          "n_trades": 860
+        },
+        {
+          "conditions": [
+            [
+              "R_h1_range_vs_atr/m5_range_vs_atr",
+              "<=",
+              0.5829169750213623
+            ],
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.033654000610113144
+            ]
+          ],
+          "loss_rate": 0.5748999714851379,
+          "n_trades": 405
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m15_range_vs_atr",
+              "<=",
+              -0.36400601267814636
+            ],
+            [
+              "m1_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6134999990463257,
+          "n_trades": 263
+        }
+      ]
+    },
+    "LC_EU": {
+      "conditions": {
+        "conf_abs_lt": 0.52,
+        "hour_gte": 8,
+        "hour_lt": 16
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "D_m15_range_vs_atr-m5_range_vs_atr",
+              ">",
+              0.09027600288391113
+            ],
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.003287999890744686
+            ]
+          ],
+          "loss_rate": 0.5432999730110168,
+          "n_trades": 740
+        },
+        {
+          "conditions": [
+            [
+              "m5_range_vs_atr",
+              "<=",
+              0.871533989906311
+            ],
+            [
+              "AGR_m15_direction*m3_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5968000292778015,
+          "n_trades": 437
+        },
+        {
+          "conditions": [
+            [
+              "AGR_h1_direction*m15_direction",
+              ">",
+              0.0
+            ],
+            [
+              "R_h1_body_vs_atr/m15_body_vs_atr",
+              "<=",
+              0.37313300371170044
+            ]
+          ],
+          "loss_rate": 0.612500011920929,
+          "n_trades": 254
+        },
+        {
+          "conditions": [
+            [
+              "D_m15_range_vs_atr-m5_range_vs_atr",
+              ">",
+              0.09027600288391113
+            ],
+            [
+              "weighted_vote",
+              "<=",
+              -0.20000000298023224
+            ]
+          ],
+          "loss_rate": 0.5896999835968018,
+          "n_trades": 348
+        }
+      ]
+    },
+    "LC_CO": {
+      "conditions": {
+        "conf_abs_lt": 0.52,
+        "_or_consolidating": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.015182999894022942
+            ]
+          ],
+          "loss_rate": 0.541100025177002,
+          "n_trades": 814
+        }
+      ]
+    },
+    "U_EU": {
+      "conditions": {
+        "ml_pred": 1,
+        "hour_gte": 8,
+        "hour_lt": 16
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "conf_abs",
+              "<=",
+              0.5326529741287231
+            ],
+            [
+              "AGR_h1_direction*m1_direction",
+              ">",
+              -0.0
+            ]
+          ],
+          "loss_rate": 0.5273000001907349,
+          "n_trades": 749
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_range_vs_atr",
+              "<=",
+              0.01789899915456772
+            ],
+            [
+              "m15_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5419999957084656,
+          "n_trades": 600
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_range_vs_atr",
+              "<=",
+              0.01789899915456772
+            ],
+            [
+              "AGR_h4_direction*m3_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5529000163078308,
+          "n_trades": 446
+        },
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              "<=",
+              0.036660000681877136
+            ],
+            [
+              "m5_range_vs_atr",
+              "<=",
+              0.7112330198287964
+            ]
+          ],
+          "loss_rate": 0.5605000257492065,
+          "n_trades": 418
+        },
+        {
+          "conditions": [
+            [
+              "f5c_aligned",
+              ">",
+              0.0
+            ],
+            [
+              "m1_fvg_bull",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6064000129699707,
+          "n_trades": 150
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_range_vs_atr",
+              "<=",
+              0.01905200071632862
+            ],
+            [
+              "CxF_m5_unfilled_fvg_dist",
+              ">",
+              0.004821999929845333
+            ]
+          ],
+          "loss_rate": 0.5587999820709229,
+          "n_trades": 234
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_range_vs_atr",
+              "<=",
+              0.01789899915456772
+            ],
+            [
+              "AGR_m15_direction*m3_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5741000175476074,
+          "n_trades": 532
+        }
+      ]
+    },
+    "D_TF": {
+      "conditions": {
+        "ml_pred": 0
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "AGR_m15_direction*m3_direction",
+              ">",
+              0.0
+            ],
+            [
+              "C123M_m15_c123=m3_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5357000231742859,
+          "n_trades": 763
+        },
+        {
+          "conditions": [
+            [
+              "m5_body_vs_atr",
+              ">",
+              0.9372779726982117
+            ]
+          ],
+          "loss_rate": 0.541100025177002,
+          "n_trades": 557
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.001973999897018075
+            ],
+            [
+              "AGR_m1_direction*m3_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5784000158309937,
+          "n_trades": 452
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.24619300663471222
+            ],
+            [
+              "m15_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5450999736785889,
+          "n_trades": 677
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.3096410036087036
+            ],
+            [
+              "D_h1_range_vs_atr-m1_range_vs_atr",
+              "<=",
+              -0.37828999757766724
+            ]
+          ],
+          "loss_rate": 0.5464000105857849,
+          "n_trades": 518
+        },
+        {
+          "conditions": [
+            [
+              "m1_range_vs_atr",
+              ">",
+              0.7914940118789673
+            ],
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              ">",
+              -0.9348660111427307
+            ]
+          ],
+          "loss_rate": 0.5705000162124634,
+          "n_trades": 442
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.3096410036087036
+            ],
+            [
+              "AGR_m15_direction*m3_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5601000189781189,
+          "n_trades": 504
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_low",
+              ">",
+              -0.27283400297164917
+            ],
+            [
+              "AGR_m15_direction*m3_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5555999875068665,
+          "n_trades": 441
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.3096410036087036
+            ],
+            [
+              "c1_count_m5",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5575000047683716,
+          "n_trades": 460
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_high",
+              "<=",
+              -2.2109739780426025
+            ],
+            [
+              "CxF_c1_count_m5",
+              ">",
+              0.004050000105053186
+            ]
+          ],
+          "loss_rate": 0.6269999742507935,
+          "n_trades": 191
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.34293800592422485
+            ],
+            [
+              "D_m15_range_vs_atr-m1_range_vs_atr",
+              "<=",
+              -0.2024330049753189
+            ]
+          ],
+          "loss_rate": 0.5598999857902527,
+          "n_trades": 426
+        }
+      ]
+    },
+    "Uc50": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_gte": 0.5,
+        "conf_abs_lt": 0.52
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m15_c123",
+              ">",
+              2.0
+            ],
+            [
+              "m3_c123",
+              ">",
+              2.0
+            ]
+          ],
+          "loss_rate": 0.5625,
+          "n_trades": 673
+        }
+      ]
+    },
+    "Dc53": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.53,
+        "conf_abs_lt": 0.55
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m1_range_vs_atr",
+              ">",
+              0.7897440195083618
+            ],
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.035523999482393265
+            ]
+          ],
+          "loss_rate": 0.5368000268936157,
+          "n_trades": 622
+        }
+      ]
+    },
+    "C54": {
+      "conditions": {
+        "conf_abs_gte": 0.54,
+        "conf_abs_lt": 0.55
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "AGR_bias_direction*m5_direction",
+              ">",
+              0.0
+            ],
+            [
+              "CxF_m5_range_vs_atr",
+              ">",
+              0.03968999907374382
+            ]
+          ],
+          "loss_rate": 0.5236999988555908,
+          "n_trades": 565
+        },
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              ">",
+              0.09092000126838684
+            ],
+            [
+              "AGR_bias_direction*m5_direction",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5407000184059143,
+          "n_trades": 522
+        },
+        {
+          "conditions": [
+            [
+              "D_m15_range_vs_atr-m1_range_vs_atr",
+              ">",
+              0.4373680055141449
+            ],
+            [
+              "AGR_bias_direction*m30_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5358999967575073,
+          "n_trades": 354
+        },
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m15_range_vs_atr",
+              ">",
+              1.440330982208252
+            ],
+            [
+              "AGR_bias_direction*m30_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.534600019454956,
+          "n_trades": 361
+        },
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              ">",
+              0.09092000126838684
+            ],
+            [
+              "C123M_h4_c123=m15_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5414999723434448,
+          "n_trades": 328
+        },
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              ">",
+              0.09092000126838684
+            ],
+            [
+              "hour_cos",
+              ">",
+              0.6087610125541687
+            ]
+          ],
+          "loss_rate": 0.5640000104904175,
+          "n_trades": 269
+        },
+        {
+          "conditions": [
+            [
+              "weighted_vote",
+              ">",
+              0.44999998807907104
+            ],
+            [
+              "C123M_h4_c123=m15_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6481000185012817,
+          "n_trades": 81
+        }
+      ]
+    },
+    "U_LV": {
+      "conditions": {
+        "ml_pred": 1,
+        "m5_range_vs_atr_lt": 0.6
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              "<=",
+              0.02768399938941002
+            ],
+            [
+              "m15_fvg_bear",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5494999885559082,
+          "n_trades": 491
+        },
+        {
+          "conditions": [
+            [
+              "h1_body_vs_atr",
+              "<=",
+              0.0598209984600544
+            ],
+            [
+              "C123M_h1_c123=m30_c123",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6100000143051147,
+          "n_trades": 142
+        }
+      ]
+    },
+    "D_C2": {
+      "conditions": {
+        "ml_pred": 0,
+        "m5_c123_eq": 2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.3163740038871765
+            ],
+            [
+              "c1_count_m5",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5426999926567078,
+          "n_trades": 650
+        },
+        {
+          "conditions": [
+            [
+              "f5a_aligned",
+              "<=",
+              -1.0
+            ],
+            [
+              "AGR_m1_direction*m5_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.65829998254776,
+          "n_trades": 174
+        }
+      ]
+    },
+    "U_MC_HV": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "m5_range_vs_atr_gte": 1.2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_h1_range_vs_atr/m15_range_vs_atr",
+              "<=",
+              1.0926810503005981
+            ],
+            [
+              "CxF_m1_body_vs_atr",
+              ">",
+              0.01268799975514412
+            ]
+          ],
+          "loss_rate": 0.5436999797821045,
+          "n_trades": 462
+        },
+        {
+          "conditions": [
+            [
+              "AGR_m1_direction*m3_direction",
+              "<=",
+              -1.0
+            ],
+            [
+              "R_h1_range_vs_atr/m1_range_vs_atr",
+              "<=",
+              1.1358040571212769
+            ]
+          ],
+          "loss_rate": 0.573199987411499,
+          "n_trades": 321
+        }
+      ]
+    },
+    "MC_HV": {
+      "conditions": {
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "m5_range_vs_atr_gte": 1.2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "C123M_m1_c123=m3_c123",
+              ">",
+              0.0
+            ],
+            [
+              "R_h1_range_vs_atr/m5_range_vs_atr",
+              "<=",
+              0.6086710095405579
+            ]
+          ],
+          "loss_rate": 0.54339998960495,
+          "n_trades": 572
+        }
+      ]
+    },
+    "U_TR": {
+      "conditions": {
+        "ml_pred": 1,
+        "_or_trending": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m1_fvg_bear",
+              "<=",
+              0.0
+            ],
+            [
+              "AGR_h1_direction*m1_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5593000054359436,
+          "n_trades": 661
+        },
+        {
+          "conditions": [
+            [
+              "m3_fvg_bull",
+              ">",
+              0.0
+            ],
+            [
+              "CxF_c1_count_m1",
+              "<=",
+              0.01355700008571148
+            ]
+          ],
+          "loss_rate": 0.5952000021934509,
+          "n_trades": 358
+        }
+      ]
+    },
+    "D_ASIA": {
+      "conditions": {
+        "ml_pred": 0,
+        "hour_gte": 0,
+        "hour_lt": 8
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "conf_abs",
+              "<=",
+              0.5340149998664856
+            ],
+            [
+              "m5_body_vs_atr",
+              ">",
+              0.6817240118980408
+            ]
+          ],
+          "loss_rate": 0.5446000099182129,
+          "n_trades": 505
+        }
+      ]
+    },
+    "Dc52": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.54
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.4663339853286743
+            ],
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.03409000113606453
+            ]
+          ],
+          "loss_rate": 0.5569000244140625,
+          "n_trades": 491
+        }
+      ]
+    },
+    "C52": {
+      "conditions": {
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.53
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_m15_body_vs_atr/m5_body_vs_atr",
+              ">",
+              5.278563976287842
+            ]
+          ],
+          "loss_rate": 0.5390999913215637,
+          "n_trades": 372
+        },
+        {
+          "conditions": [
+            [
+              "m1_range_vs_atr",
+              ">",
+              1.528331995010376
+            ],
+            [
+              "m3_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5889999866485596,
+          "n_trades": 232
+        }
+      ]
+    },
+    "U_CO": {
+      "conditions": {
+        "ml_pred": 1,
+        "_or_consolidating": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              "<=",
+              0.019758999347686768
+            ],
+            [
+              "hour_cos",
+              ">",
+              0.38268300890922546
+            ]
+          ],
+          "loss_rate": 0.557699978351593,
+          "n_trades": 292
+        },
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              "<=",
+              0.016354000195860863
+            ],
+            [
+              "R_m15_body_vs_atr/m1_body_vs_atr",
+              "<=",
+              0.3428199887275696
+            ]
+          ],
+          "loss_rate": 0.5570999979972839,
+          "n_trades": 252
+        },
+        {
+          "conditions": [
+            [
+              "AGR_m15_direction*m3_direction",
+              "<=",
+              -1.0
+            ],
+            [
+              "R_h1_range_vs_atr/m1_range_vs_atr",
+              "<=",
+              0.9015979766845703
+            ]
+          ],
+          "loss_rate": 0.5580000281333923,
+          "n_trades": 226
+        },
+        {
+          "conditions": [
+            [
+              "hour_cos",
+              ">",
+              0.5
+            ],
+            [
+              "m1_range_vs_atr",
+              ">",
+              1.251816987991333
+            ]
+          ],
+          "loss_rate": 0.5741000175476074,
+          "n_trades": 172
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_high",
+              ">",
+              -0.1412229984998703
+            ],
+            [
+              "hour_cos",
+              ">",
+              0.38268300890922546
+            ]
+          ],
+          "loss_rate": 0.6154000163078308,
+          "n_trades": 112
+        }
+      ]
+    },
+    "U_LC_TR": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_lt": 0.52,
+        "_or_trending": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "hour_cos",
+              ">",
+              0.2452940046787262
+            ],
+            [
+              "C123M_m1_c123=m30_c123",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5932000279426575,
+          "n_trades": 404
+        }
+      ]
+    },
+    "D_MC_HV": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "m5_range_vs_atr_gte": 1.2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m5_unfilled_fvg_dist",
+              "<=",
+              0.027018999680876732
+            ],
+            [
+              "AGR_bias_direction*m15_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5623000264167786,
+          "n_trades": 395
+        },
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m15_range_vs_atr",
+              ">",
+              0.6015679836273193
+            ],
+            [
+              "CxF_m5_unfilled_fvg_dist",
+              "<=",
+              0.027018999680876732
+            ]
+          ],
+          "loss_rate": 0.5544000267982483,
+          "n_trades": 421
+        }
+      ]
+    },
+    "U_LA": {
+      "conditions": {
+        "ml_pred": 1,
+        "alignment_count_lt": 2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m5_swept_high",
+              ">",
+              -0.7254599928855896
+            ],
+            [
+              "AGR_m1_direction*m5_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5651999711990356,
+          "n_trades": 355
+        }
+      ]
+    },
+    "Uc53": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_gte": 0.53,
+        "conf_abs_lt": 0.55
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_m15_range_vs_atr/m1_range_vs_atr",
+              ">",
+              1.044137954711914
+            ],
+            [
+              "hour_cos",
+              ">",
+              0.7798839807510376
+            ]
+          ],
+          "loss_rate": 0.5770999789237976,
+          "n_trades": 306
+        },
+        {
+          "conditions": [
+            [
+              "m3_fvg_bull",
+              ">",
+              0.0
+            ],
+            [
+              "CxF_m5_range_vs_atr",
+              ">",
+              0.041301000863313675
+            ]
+          ],
+          "loss_rate": 0.593999981880188,
+          "n_trades": 182
+        },
+        {
+          "conditions": [
+            [
+              "AGR_m1_direction*m5_direction",
+              "<=",
+              -1.0
+            ],
+            [
+              "f5c_aligned",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.589900016784668,
+          "n_trades": 253
+        }
+      ]
+    },
+    "U_LC_CO": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_lt": 0.52,
+        "_or_consolidating": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m5_body_vs_atr",
+              "<=",
+              0.18411000072956085
+            ],
+            [
+              "R_m15_body_vs_atr/m1_body_vs_atr",
+              ">",
+              0.182327002286911
+            ]
+          ],
+          "loss_rate": 0.5748000144958496,
+          "n_trades": 234
+        }
+      ]
+    },
+    "D_EU": {
+      "conditions": {
+        "ml_pred": 0,
+        "hour_gte": 8,
+        "hour_lt": 16
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              "<=",
+              -3.827502965927124
+            ],
+            [
+              "m1_fvg_bull",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5946000218391418,
+          "n_trades": 255
+        },
+        {
+          "conditions": [
+            [
+              "m5_swept_low",
+              ">",
+              -0.1967650055885315
+            ],
+            [
+              "m1_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5491999983787537,
+          "n_trades": 351
+        },
+        {
+          "conditions": [
+            [
+              "f5d_aligned",
+              "<=",
+              -1.0
+            ],
+            [
+              "CxF_consec_c3_m5",
+              "<=",
+              0.015475999563932419
+            ]
+          ],
+          "loss_rate": 0.571399986743927,
+          "n_trades": 258
+        },
+        {
+          "conditions": [
+            [
+              "m5_unfilled_fvg_dist",
+              "<=",
+              -0.557703971862793
+            ],
+            [
+              "m5_swept_low",
+              ">",
+              -0.1967650055885315
+            ]
+          ],
+          "loss_rate": 0.5637999773025513,
+          "n_trades": 250
+        }
+      ]
+    },
+    "D_MOM": {
+      "conditions": {
+        "ml_pred": 0,
+        "consec_c3_m5_gte": 3
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.15622900426387787
+            ],
+            [
+              "m3_direction",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5411999821662903,
+          "n_trades": 263
+        },
+        {
+          "conditions": [
+            [
+              "h4_direction",
+              ">",
+              0.0
+            ],
+            [
+              "C123M_m1_c123=m3_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.590499997138977,
+          "n_trades": 176
+        },
+        {
+          "conditions": [
+            [
+              "AGR_h4_direction*m5_direction",
+              ">",
+              0.0
+            ],
+            [
+              "D_m15_range_vs_atr-m5_range_vs_atr",
+              "<=",
+              -0.09842900186777115
+            ]
+          ],
+          "loss_rate": 0.5479000210762024,
+          "n_trades": 215
+        }
+      ]
+    },
+    "Uc54": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_gte": 0.54,
+        "conf_abs_lt": 0.56
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m5_range_vs_atr",
+              ">",
+              0.06277400255203247
+            ],
+            [
+              "AGR_bias_direction*m1_direction",
+              ">",
+              -0.0
+            ]
+          ],
+          "loss_rate": 0.6262999773025513,
+          "n_trades": 196
+        },
+        {
+          "conditions": [
+            [
+              "f5c_aligned",
+              ">",
+              0.0
+            ],
+            [
+              "C123M_h1_c123=m5_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6818000078201294,
+          "n_trades": 61
+        }
+      ]
+    },
+    "Uc55": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_gte": 0.55,
+        "conf_abs_lt": 0.57
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_m1_range_vs_atr/m5_range_vs_atr",
+              ">",
+              1.8563339710235596
+            ],
+            [
+              "P_m1_last_displacement*m5_range_vs_atr",
+              "<=",
+              1.0061450004577637
+            ]
+          ],
+          "loss_rate": 0.546500027179718,
+          "n_trades": 174
+        },
+        {
+          "conditions": [
+            [
+              "m15_body_vs_atr",
+              ">",
+              0.8170940279960632
+            ],
+            [
+              "AGR_m1_direction*m3_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.6000000238418579,
+          "n_trades": 98
+        },
+        {
+          "conditions": [
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              "<=",
+              -3.9299380779266357
+            ],
+            [
+              "CxF_m1_body_vs_atr",
+              ">",
+              0.04639799892902374
+            ]
+          ],
+          "loss_rate": 0.6176000237464905,
+          "n_trades": 74
+        },
+        {
+          "conditions": [
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.062059998512268066
+            ],
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              "<=",
+              -3.9299380779266357
+            ]
+          ],
+          "loss_rate": 0.6000000238418579,
+          "n_trades": 59
+        }
+      ]
+    },
+    "Dc54": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.54,
+        "conf_abs_lt": 0.56
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m15_range_vs_atr",
+              "<=",
+              0.5917249917984009
+            ],
+            [
+              "CxF_weighted_vote",
+              "<=",
+              0.014295999892055988
+            ]
+          ],
+          "loss_rate": 0.5647000074386597,
+          "n_trades": 268
+        }
+      ]
+    },
+    "U_RV": {
+      "conditions": {
+        "ml_pred": 1
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m5_swept_low",
+              "<=",
+              -3.0855720043182373
+            ],
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.06084499880671501
+            ]
+          ],
+          "loss_rate": 0.550000011920929,
+          "n_trades": 269
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_body_vs_atr",
+              "<=",
+              0.0007660000119358301
+            ],
+            [
+              "m15_direction",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5493999719619751,
+          "n_trades": 251
+        }
+      ]
+    },
+    "C57": {
+      "conditions": {
+        "conf_abs_gte": 0.57,
+        "conf_abs_lt": 0.58
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_h1_range_vs_atr/m5_range_vs_atr",
+              "<=",
+              0.8288180232048035
+            ],
+            [
+              "C123M_m15_c123=m3_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5573999881744385,
+          "n_trades": 215
+        },
+        {
+          "conditions": [
+            [
+              "R_h1_body_vs_atr/m5_body_vs_atr",
+              ">",
+              3.3198840618133545
+            ],
+            [
+              "AGR_h1_direction*h4_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6104000210762024,
+          "n_trades": 120
+        },
+        {
+          "conditions": [
+            [
+              "R_m15_body_vs_atr/m5_body_vs_atr",
+              ">",
+              5.4612717628479
+            ],
+            [
+              "AGR_h1_direction*h4_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.680899977684021,
+          "n_trades": 69
+        },
+        {
+          "conditions": [
+            [
+              "R_m1_range_vs_atr/m5_range_vs_atr",
+              "<=",
+              0.26881200075149536
+            ],
+            [
+              "C123M_h4_c123=m30_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.7073000073432922,
+          "n_trades": 56
+        }
+      ]
+    },
+    "MC_CO": {
+      "conditions": {
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "_or_consolidating": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m30_c123",
+              ">",
+              2.0
+            ],
+            [
+              "C123M_m15_c123=m30_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.567799985408783,
+          "n_trades": 200
+        },
+        {
+          "conditions": [
+            [
+              "R_m15_body_vs_atr/m1_body_vs_atr",
+              "<=",
+              0.3037070035934448
+            ],
+            [
+              "hour_cos",
+              ">",
+              0.7223640084266663
+            ]
+          ],
+          "loss_rate": 0.6000000238418579,
+          "n_trades": 95
+        }
+      ]
+    },
+    "D_LV": {
+      "conditions": {
+        "ml_pred": 0,
+        "m5_range_vs_atr_lt": 0.6
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_m5_body_vs_atr",
+              "<=",
+              0.0022529999259859324
+            ],
+            [
+              "AGR_m15_direction*m1_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5909000039100647,
+          "n_trades": 214
+        },
+        {
+          "conditions": [
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.012966999784111977
+            ],
+            [
+              "c1_count_m1",
+              ">",
+              2.0
+            ]
+          ],
+          "loss_rate": 0.5985999703407288,
+          "n_trades": 228
+        },
+        {
+          "conditions": [
+            [
+              "C123M_h1_c123=m15_c123",
+              ">",
+              0.0
+            ],
+            [
+              "P_m1_last_displacement*m15_range_vs_atr",
+              ">",
+              1.7538939714431763
+            ]
+          ],
+          "loss_rate": 0.5625,
+          "n_trades": 252
+        },
+        {
+          "conditions": [
+            [
+              "CxF_alignment_count",
+              "<=",
+              0.022237999364733696
+            ],
+            [
+              "AGR_m30_direction*m5_direction",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6547999978065491,
+          "n_trades": 149
+        }
+      ]
+    },
+    "C56": {
+      "conditions": {
+        "conf_abs_gte": 0.56,
+        "conf_abs_lt": 0.57
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m5_range_vs_atr",
+              "<=",
+              1.0983649492263794
+            ],
+            [
+              "CxF_c1_count_m5",
+              ">",
+              0.06787700206041336
+            ]
+          ],
+          "loss_rate": 0.5523999929428101,
+          "n_trades": 177
+        },
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m5_range_vs_atr",
+              "<=",
+              0.9644359946250916
+            ],
+            [
+              "m15_fvg_bull",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5957000255584717,
+          "n_trades": 168
+        },
+        {
+          "conditions": [
+            [
+              "m15_body_vs_atr",
+              ">",
+              0.7342110276222229
+            ],
+            [
+              "R_h1_body_vs_atr/m5_body_vs_atr",
+              ">",
+              1.5573769807815552
+            ]
+          ],
+          "loss_rate": 0.623199999332428,
+          "n_trades": 135
+        },
+        {
+          "conditions": [
+            [
+              "conf_abs",
+              "<=",
+              0.56427001953125
+            ],
+            [
+              "ASYM_m5_swept_high+m5_swept_low",
+              "<=",
+              -4.069791793823242
+            ]
+          ],
+          "loss_rate": 0.6101999878883362,
+          "n_trades": 106
+        },
+        {
+          "conditions": [
+            [
+              "AGR_m1_direction*m3_direction",
+              "<=",
+              -1.0
+            ],
+            [
+              "m15_fvg_bull",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.692300021648407,
+          "n_trades": 79
+        },
+        {
+          "conditions": [
+            [
+              "f5c_aligned",
+              "<=",
+              -1.0
+            ],
+            [
+              "R_m15_body_vs_atr/m1_body_vs_atr",
+              ">",
+              5.93543815612793
+            ]
+          ],
+          "loss_rate": 0.6578999757766724,
+          "n_trades": 62
+        },
+        {
+          "conditions": [
+            [
+              "m5_range_vs_atr",
+              "<=",
+              0.4740929901599884
+            ],
+            [
+              "h1_range_vs_atr",
+              "<=",
+              0.70871502161026
+            ]
+          ],
+          "loss_rate": 0.6773999929428101,
+          "n_trades": 48
+        }
+      ]
+    },
+    "MC_TR": {
+      "conditions": {
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "_or_trending": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m5_range_vs_atr",
+              ">",
+              0.735601007938385
+            ],
+            [
+              "hour_cos",
+              ">",
+              0.9600499868392944
+            ]
+          ],
+          "loss_rate": 0.6000000238418579,
+          "n_trades": 154
+        },
+        {
+          "conditions": [
+            [
+              "consec_c3_m1",
+              ">",
+              0.0
+            ],
+            [
+              "hour_cos",
+              ">",
+              0.9600499868392944
+            ]
+          ],
+          "loss_rate": 0.612500011920929,
+          "n_trades": 129
+        }
+      ]
+    },
+    "U_US": {
+      "conditions": {
+        "ml_pred": 1,
+        "hour_gte": 16,
+        "hour_lt": 24
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "conf_abs",
+              "<=",
+              0.5138059854507446
+            ],
+            [
+              "h1_fvg_bull",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6370999813079834,
+          "n_trades": 195
+        }
+      ]
+    },
+    "U_MOM": {
+      "conditions": {
+        "ml_pred": 1,
+        "consec_c3_m5_gte": 3
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m5_swept_low",
+              "<=",
+              -1.3559919595718384
+            ],
+            [
+              "f5d_aligned",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5504000186920166,
+          "n_trades": 181
+        },
+        {
+          "conditions": [
+            [
+              "m1_body_vs_atr",
+              ">",
+              1.4416660070419312
+            ],
+            [
+              "AGR_m30_direction*m5_direction",
+              "<=",
+              -0.0
+            ]
+          ],
+          "loss_rate": 0.8946999907493591,
+          "n_trades": 29
+        }
+      ]
+    },
+    "D_MC_LV": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "m5_range_vs_atr_lt": 0.6
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "P_m1_last_displacement*m1_range_vs_atr",
+              ">",
+              1.0737030506134033
+            ],
+            [
+              "AGR_h4_direction*m5_direction",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.5889000296592712,
+          "n_trades": 153
+        },
+        {
+          "conditions": [
+            [
+              "AGR_h1_direction*m30_direction",
+              ">",
+              -0.0
+            ],
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              ">",
+              0.8903149962425232
+            ]
+          ],
+          "loss_rate": 0.5921000242233276,
+          "n_trades": 127
+        },
+        {
+          "conditions": [
+            [
+              "D_h1_range_vs_atr-m5_range_vs_atr",
+              ">",
+              0.8903149962425232
+            ],
+            [
+              "C123M_h1_c123=m30_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5942000150680542,
+          "n_trades": 107
+        }
+      ]
+    },
+    "U_MC_CO": {
+      "conditions": {
+        "ml_pred": 1,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "_or_consolidating": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "AGR_m1_direction*m3_direction",
+              ">",
+              0.0
+            ],
+            [
+              "P_m1_last_displacement*m5_range_vs_atr",
+              "<=",
+              0.4904490113258362
+            ]
+          ],
+          "loss_rate": 0.5817999839782715,
+          "n_trades": 109
+        },
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              ">",
+              0.12274599820375443
+            ],
+            [
+              "C123M_h1_c123=m1_c123",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5464000105857849,
+          "n_trades": 144
+        }
+      ]
+    },
+    "D_HA": {
+      "conditions": {
+        "ml_pred": 0,
+        "alignment_count_gte": 5
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_c1_count_m1",
+              ">",
+              0.03016900084912777
+            ],
+            [
+              "weighted_vote",
+              "<=",
+              0.6499999761581421
+            ]
+          ],
+          "loss_rate": 0.612500011920929,
+          "n_trades": 125
+        },
+        {
+          "conditions": [
+            [
+              "m1_fvg_bear",
+              ">",
+              0.0
+            ],
+            [
+              "C123M_h1_c123=m30_c123",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.6118000149726868,
+          "n_trades": 129
+        },
+        {
+          "conditions": [
+            [
+              "m1_fvg_bear",
+              ">",
+              0.0
+            ],
+            [
+              "C123M_m30_c123=m5_c123",
+              "<=",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.621999979019165,
+          "n_trades": 125
+        }
+      ]
+    },
+    "D_MC_TR": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "_or_trending": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "CxF_consec_c3_m1",
+              ">",
+              0.029929999262094498
+            ],
+            [
+              "m5_swept_high",
+              "<=",
+              -1.478652000427246
+            ]
+          ],
+          "loss_rate": 0.619700014591217,
+          "n_trades": 108
+        },
+        {
+          "conditions": [
+            [
+              "CxF_m1_body_vs_atr",
+              ">",
+              0.030043000355362892
+            ],
+            [
+              "P_m1_last_displacement*m15_range_vs_atr",
+              ">",
+              1.1615159511566162
+            ]
+          ],
+          "loss_rate": 0.6582000255584717,
+          "n_trades": 118
+        }
+      ]
+    },
+    "D_MC_CO": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.52,
+        "conf_abs_lt": 0.55,
+        "_or_consolidating": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "m30_c123",
+              ">",
+              2.0
+            ],
+            [
+              "C123M_h4_c123=m30_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.5896999835968018,
+          "n_trades": 125
+        }
+      ]
+    },
+    "D_CO": {
+      "conditions": {
+        "ml_pred": 0,
+        "_or_consolidating": true
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "AGR_m15_direction*m3_direction",
+              "<=",
+              -1.0
+            ],
+            [
+              "P_m1_last_displacement*m15_range_vs_atr",
+              ">",
+              1.7201329469680786
+            ]
+          ],
+          "loss_rate": 0.6352999806404114,
+          "n_trades": 125
+        }
+      ]
+    },
+    "U_C1": {
+      "conditions": {
+        "ml_pred": 1,
+        "m5_c123_eq": 1
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_m1_range_vs_atr/m5_range_vs_atr",
+              ">",
+              2.772357940673828
+            ],
+            [
+              "h1_direction",
+              ">",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.6029000282287598,
+          "n_trades": 105
+        }
+      ]
+    },
+    "C55": {
+      "conditions": {
+        "conf_abs_gte": 0.55,
+        "conf_abs_lt": 0.56
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "conf_abs",
+              "<=",
+              0.5511059761047363
+            ],
+            [
+              "C123M_h1_c123=m15_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.666700005531311,
+          "n_trades": 81
+        }
+      ]
+    },
+    "CO_HV": {
+      "conditions": {
+        "_or_consolidating": true,
+        "m5_range_vs_atr_gte": 1.2
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "hour_cos",
+              ">",
+              0.46174898743629456
+            ],
+            [
+              "C123M_h4_c123=m5_c123",
+              ">",
+              0.0
+            ]
+          ],
+          "loss_rate": 0.604200005531311,
+          "n_trades": 76
+        }
+      ]
+    },
+    "Dc55": {
+      "conditions": {
+        "ml_pred": 0,
+        "conf_abs_gte": 0.55,
+        "conf_abs_lt": 0.57
+      },
+      "rules": [
+        {
+          "conditions": [
+            [
+              "R_m15_range_vs_atr/m1_range_vs_atr",
+              "<=",
+              0.7800300121307373
+            ],
+            [
+              "m1_direction",
+              "<=",
+              -1.0
+            ]
+          ],
+          "loss_rate": 0.6237000226974487,
+          "n_trades": 159
+        }
+      ]
+    }
+  },
+  "stats": {
+    "base_wr": 0.5392691798941799,
+    "flip_wr": 0.5540674603174603,
+    "val_base_wr": 0.5362199028624574,
+    "val_flip_wr": 0.5806551617236747,
+    "n_rules": 167,
+    "n_flipped": 18034,
+    "n_total": 24192
+  }
+}

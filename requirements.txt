@@ -1,0 +1,12 @@
+numpy
+lightgbm
+scikit-learn
+flask
+flask-socketio
+websockets
+requests
+python-dotenv
+py-clob-client
+py-builder-relayer-client
+eth-abi
+web3

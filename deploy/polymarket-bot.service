@@ -1,0 +1,18 @@
+[Unit]
+Description=Polymarket Live Trading Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=its0x
+WorkingDirectory=/home/its0x/polymarket
+ExecStart=/usr/bin/python3 live_bot.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/home/its0x/polymarket/logs/bot.log
+StandardError=append:/home/its0x/polymarket/logs/bot.log
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
